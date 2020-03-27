@@ -20,7 +20,6 @@ java -jar target/community-0.0.1-SNAPSHOT.jar
 ```
 http://localhost:8887
 ```
-![github登录认证](https://github.com/LiYifei0723/mayunblog/blob/master/github%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81.png)
 ## 资料
 [Spring 文档](https://spring.io/guides)    
 [Spring Web](https://spring.io/guides/gs/serving-web-content/)   

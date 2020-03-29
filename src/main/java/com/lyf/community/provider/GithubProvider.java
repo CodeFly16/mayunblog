@@ -1,7 +1,8 @@
 package com.lyf.community.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.lyf.community.pojo.AccessTokenPOJO;
+import com.lyf.community.dto.AccessTokenDTO;
+import com.lyf.community.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
@@ -9,12 +10,12 @@ import java.io.IOException;
 
 @Component
 public class GithubProvider {
-    public String getAccessToken(AccessTokenPOJO accessTokenPOJO) {
+    public String getAccessToken(AccessTokenDTO accessTokenDTO) {
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
 
         OkHttpClient client = new OkHttpClient();
 
-        RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenPOJO));
+        RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenDTO));
         Request request = new Request.Builder()
                 .url("https://github.com/login/oauth/access_token")
                 .post(body)

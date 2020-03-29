@@ -1,9 +1,10 @@
-package com.lyf.community.pojo;
+package com.lyf.community.dto;
 
+import com.lyf.community.pojo.User;
 import lombok.Data;
 
 @Data
-public class Question {
+public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
@@ -14,6 +15,5 @@ public class Question {
     private Integer commentCount;
     private Integer viewCount;
     private Integer likeCount;
-    private String avatarUrl;
-
+    private User user;
 }

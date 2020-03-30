@@ -1,9 +1,8 @@
 package com.lyf.community.controller;
 
 import com.lyf.community.dto.QuestionDTO;
-import com.lyf.community.mapper.QuestionMapper;
-import com.lyf.community.pojo.Question;
-import com.lyf.community.pojo.User;
+import com.lyf.community.model.Question;
+import com.lyf.community.model.User;
 import com.lyf.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

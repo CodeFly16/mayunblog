@@ -1,12 +1,10 @@
 package com.lyf.community.controller;
 
-import com.lyf.community.mapper.UserMapper;
 import com.lyf.community.dto.AccessTokenDTO;
-import com.lyf.community.pojo.User;
+import com.lyf.community.model.User;
 import com.lyf.community.provider.GithubProvider;
 import com.lyf.community.dto.GithubUser;
 import com.lyf.community.service.UserService;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

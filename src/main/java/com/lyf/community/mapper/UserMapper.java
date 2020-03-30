@@ -1,23 +1,33 @@
 package com.lyf.community.mapper;
 
-import com.lyf.community.pojo.User;
-import org.apache.ibatis.annotations.*;
+import com.lyf.community.model.User;
+import com.lyf.community.model.UserExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
-@Mapper
 public interface UserMapper {
+    long countByExample(UserExample example);
 
-    @Insert("Insert into user(ACCOUNT_ID,NAME,TOKEN,GMT_CREATE,GMT_MODIFIER,avatar_url) values (#{accountId},#{name},#{token},#{gmtCreate},#{gmtModifier}),#{avatarUrl}")
-    void insert(User user);
+    int deleteByExample(UserExample example);
 
-    @Select("select * from user where token=#{token}")
-    User findByToken(@Param("token") String token);
+    int deleteByPrimaryKey(Integer id);
 
-    @Select("select * from user where id=#{id}")
-    User findById(@Param("id") Integer id);
+    int insert(User record);
 
-    @Select("select * from user where account_id=#{accountId}")
-    User findByAccountId(String accountId);
+    int insertSelective(User record);
 
-    @Update("update user set name = #{name}, token = #{token}, GMT_MODIFIER = #{gmtModifier},avatar_url=#{avatarUrl} where id = #{id}")
-    void update(User dbUser);
+    List<User> selectByExampleWithRowbounds(UserExample example, RowBounds rowBounds);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

@@ -1,6 +1,6 @@
 package com.lyf.community.dto;
 
-import com.lyf.community.pojo.User;
+import com.lyf.community.model.User;
 import lombok.Data;
 
 @Data

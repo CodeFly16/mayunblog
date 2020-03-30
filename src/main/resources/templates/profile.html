@@ -20,8 +20,7 @@
             <div class="media" th:each="question:${pagination.questions}">
                 <div class="media-left">
                     <a href="#">
-                        <img class="media-object img-rounded" th:src="${question.user.avatar_url}"
-                             src="https://avatars0.githubusercontent.com/u/61872730?v=4">
+                        <img class="media-object img-rounded" th:src="${question.user.avatarUrl}">
                     </a>
                 </div>
                 <div class="media-body">
@@ -56,7 +55,7 @@
                         </a>
                     </li>
                     <li th:if="${pagination.showEndPage}">
-                        <a th:href="@{'/profile/'+${section}(page = ${pagination.totalPage})}" aria-label="Previous">
+                        <a th:href="@{'/profile'+${section}(page = ${pagination.totalPage})}" aria-label="Previous">
                             <span aria-hidden="true">&gt;&gt;</span>
                         </a>
                     </li>
